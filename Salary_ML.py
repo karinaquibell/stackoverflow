@@ -23,6 +23,7 @@ def clean_data(df):
     5. For each numeric variable, fill the column with the mean value.
     6. Create dummy columns for all the categorical variables, drop the original columns
     '''
+
     # Drop rows with missing salary values
     df = df.dropna(subset=['Salary'], axis=0)
     y = df['Salary']
@@ -60,6 +61,7 @@ def find_optimal_lm_mod(X, y, cutoffs, test_size = .30, random_state=42, plot=Tr
     lm_model - model object from sklearn
     X_train, X_test, y_train, y_test - output from sklearn train test split used for optimal model
     '''
+
     r2_scores_test, r2_scores_train, num_feats, results = [], [], [], dict()
     for cutoff in cutoffs:
 
